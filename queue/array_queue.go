@@ -4,8 +4,6 @@
 */
 package queue
 
-import "fmt"
-
 type Queue struct {
 	items []int //数组
 	head int
@@ -13,36 +11,20 @@ type Queue struct {
 }
 var myQueue Queue
 
-func main() {
-	fmt.Println(myQueue)
-	xx := make([]int, 8)
-	xx[0] =1;
-	xx[0] =1;xx[0] =1;
-	xx[0] =1;xx[0] =1;xx[0] =1;xx[0] =1;
-	xx[0] =1;
-	xx[0] =1;xx[9] =1;
-	fmt.Println(xx)
-}
-
-func init() {
-	myQueue = Queue{
-		items: []int{},
-		head: 0,
-		tail: 0,
-	}
-}
-
 //入队
 func enqueue(item int) bool {
-	myQueue.items[myQueue.tail] = item
+	myQueue.items = append(myQueue.items, item)
 	myQueue.tail++
 	return true
 }
 
 //出队
-func dequeue() int {
+func dequeue() interface{} {
 	//head==tail代表队列为空
-	if head = tail {
-		
+	if  myQueue.head == myQueue.tail {
+		return nil
 	}
+	item := myQueue.items[myQueue.head]
+	myQueue.head++
+	return item
 }
