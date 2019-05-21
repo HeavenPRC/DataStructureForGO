@@ -17,7 +17,7 @@ func init() {
 	}
 }
 
-func TestLink(t *testing.T) {
+func TestArray(t *testing.T) {
 	enqueue(1)
 	enqueue(2)
 	enqueue(3)
