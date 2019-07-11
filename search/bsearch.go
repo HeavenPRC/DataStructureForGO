@@ -121,8 +121,8 @@ func SearchAb(a []int) int {
 	for low <= high {
 		pivot := low + (high - low) / 2
 
-		if a[pivot] <= a[0] {
-			if  pivot == 0 || a[pivot - 1] > a[0] {
+		if a[pivot] < a[0] {
+			if pivot == 0 || a[pivot - 1] >= a[0] {
 				return pivot
 			} else {
 				high = pivot - 1
